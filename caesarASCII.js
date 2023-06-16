@@ -90,6 +90,7 @@ function decode() {
     }
 
     //String and cipher must be the same length. If not, prompt user to re-enter a cipher of appropriate length
+    //They don't actually have to be the same length, but the cipher must be longer than the string
     while (cipher.length !== string.length) {
         cipher = input.question("Your cipher had " + cipher.length + " characters. Enter a cipher of length " + string.length + ": ");
     }
@@ -116,3 +117,6 @@ console.log(decodedString);
 // ANSWER: Functions can be called before they are defined because of hoisting. Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Inevitably, this means that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.
 
 //ANSWER: The reason the encodedString and decodedString variables must be defined outside of the loop is because if they are defined inside the loop, they will be redefined each time the loop runs. This means that the variable will only hold the value of the last iteration of the loop.
+
+//Part 3: If the user doesn't enter a key, generate a randomy key of all lowercase letters of at least length 100
+
